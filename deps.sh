@@ -3,5 +3,4 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x -o nodesource_setup.sh
 sudo -E bash nodesource_setup.sh
 sudo apt install nodejs
 pip install lazyme --break-system-packages
-sudo npm i -g tsc
 rustup default stable
