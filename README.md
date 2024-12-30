@@ -12,11 +12,12 @@ The "Ranking Programming Languages by Energy Efficiency" study (SCP 2021) aimed 
    - Dependencies : Different compilers (C, Rust, Python, Java, Javascript)
    - System requirements : Linux and Intel CPU is mandatory
 
-2. **Setting Up the Environment**  
+2. **Setting Up the Environment**
+     // TODO : dans le fichier python ajouter une section qui copie tout les csv vers un dossier /app/output
      ```bash
      sudo modprobe msr
      docker build -t reproducible-project .
-     docker run -it reproducible-project
+     docker run -v $(pwd)/output:/app/output -it reproducible-project
      ```
 
 3. **Reproducing Results**  // TODO
