@@ -4,3 +4,4 @@ sudo -E bash nodesource_setup.sh
 sudo apt install nodejs
 pip install lazyme --break-system-packages
 rustup default stable
+chmod +x ./Java-GraalVM/install.sh && ./Java-GraalVM/install.sh
