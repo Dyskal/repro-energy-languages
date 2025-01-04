@@ -1,0 +1,24 @@
+Language,Algorithm,MeanCPU,SigmaCPU,MeanTime,SigmaTime
+C,fannkuch-redux ,201.11,1.29,6076,7.43
+C,binary-trees ,36.06,0.08,1125,5.76
+C,mandelbrot ,32.60,0.04,1142,0.31
+C,pidigits ,6.19,0.08,546,1.76
+C,spectral-norm ,20.02,0.04,677,13.69
+Java,fannkuch-redux ,291.46,2.97,8241,46.92
+Java,binary-trees ,96.09,0.85,3306,33.58
+Java,mandelbrot ,105.34,0.27,3657,13.85
+Java,spectral-norm ,37.16,0.86,1659,41.58
+JavaScript,fannkuch-redux ,332.57,0.28,33663,17.53
+JavaScript,binary-trees ,238.69,2.26,21349,200.89
+JavaScript,mandelbrot ,211.34,0.33,8278,76.26
+JavaScript,spectral-norm ,39.25,0.10,5048,23.21
+Python,fannkuch-redux ,12108.72,105.72,279544,1432.46
+Python,binary-trees ,1666.09,10.25,45003,620.39
+Python,mandelbrot ,7395.52,48.13,163332,2138.95
+Python,pidigits ,14.70,0.23,1191,34.99
+Python,spectral-norm ,6077.24,47.28,137738,459.85
+Rust,fannkuch-redux ,222.29,1.32,6628,31.21
+Rust,binary-trees ,44.46,0.11,1263,37.60
+Rust,mandelbrot ,38.24,0.04,1179,9.84
+Rust,pidigits ,6.75,0.14,559,22.12
+Rust,spectral-norm ,22.73,0.08,677,7.47
