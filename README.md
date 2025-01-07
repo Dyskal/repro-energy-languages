@@ -65,12 +65,9 @@ Identifying potential sources of variability is crucial for understanding how di
 - **Interdependencies**: Some variability factors may have interdependencies. For example, the choice of compiler may be influenced by the programming language version being used, and certain optimizations may only be available in specific compiler versions.
 - **Hardware Constraints**: The choice of CPU architecture may limit the available compilers or language versions that can be effectively utilized, as some compilers may not support certain architectures.
 
-### Replication Execution //TODO
+### Replication Execution
 1. **Instructions**  
-   - Provide detailed steps or commands for running the replication(s):  
-     ```bash
-     bash scripts/replicate_experiment.sh
-     ```
+   - Open `reproduce_results.ipynb` to execute the analysis step-by-step.
 
 2. **Presentation and Analysis of Results**  
    - Include results in text, tables, or figures.
@@ -90,6 +87,7 @@ Identifying potential sources of variability is crucial for understanding how di
 
    Finally, we decided to compare the algorithms using four key metrics: mean time, mean CPU usage, and the standard deviation for both time and CPU usage. All graphs are available in the given notebook.
 
+   
    | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
    |----------|----------|-----------|-----------|------------|
    | Rust | 29.53 | 0.78 | 935.08 | 33.32 |
@@ -125,16 +123,28 @@ Identifying potential sources of variability is crucial for understanding how di
    | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
    |----------|----------|-----------|-----------|------------|
    | C | 12.20 | 1.78 | 223.54 | 41.16 |
+   | Rust | 14.28 | 0.18 | 386.49 | 7.32 |
    | Java | 29.02 | 0.22 | 752.68 | 4.73 |
    | Javascript | 62.52 | 3.02 | 2564.52 | 54.50 |
    | Python | 2872.61 | 87.23 | 65749.01 | 687.41 |
-   | Rust | 14.28 | 0.18 | 386.49 | 7.32 |
-      
+   
+   In general, the results are close to those reported in the original paper. However, it is notable that Rust occasionally outperforms C in terms of the CPU x̅ (mean) metrics. Interestingly, for the pidigits benchmark, Python appears to be the best option. This unexpected result may be caused by Python's efficient implementation.
 
+   In contrast to the x̅ metrics, the σ (standard deviation) metrics show significant deviations from the original paper. The variability between each iteration is substantially higher in our tests. This discrepancy can be explained by several factors, such as differences in the hardware environment, varying levels of background system activity, and the lack of fine-tuned optimizations in our experimental setup compared to the original study. Additionally, our benchmarking process might involve fewer iterations, leading to less stable results.
 
 ### Does It Confirm the Original Study?
-- Summarize the extent to which the replication supports the original study’s conclusions.
-- Highlight similarities and differences, if any.
+
+   The replication largely supports the original study’s conclusions, as the overall performance trends appear consistent when comparing the languages and algorithms. The relative performance scales between the tested languages align well with the original findings, suggesting that the conclusions remain valid.
+
+   However, differences in our testing environment, such as using a newer compiler version and different hardware, may account for some variations in specific metrics, particularly in terms of standard deviations and edge cases like the pidigits benchmark. These factors highlight the influence of platform-specific optimizations and variability, but they do not significantly alter the general conclusions drawn in the original study
+
+   **Similarities** 
+
+   The replication results show strong alignment with the original study in terms of mean time and mean CPU usage across the tested algorithms and languages. This consistency suggests that the relative performance scales between the languages are preserved, supporting the original conclusions about computational efficiency.
+
+   **Differences**
+
+   The most notable differences are observed in the standard deviation for time and CPU usage. Our results exhibit significantly higher variability between iterations compared to the original study. These discrepancies can likely be attributed to differences in the testing environment, such as newer compiler versions, updated hardware, or system background activity, which may introduce additional noise into the measurements.
 
 ## Conclusion
 - Recap findings from the reproducibility and replicability sections.
