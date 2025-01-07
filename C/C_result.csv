@@ -1,4 +1,4 @@
-Algorithm,Mean CPU,Mean Core,N/A,N/A,Time
+Algorithm,Mean PKG,Mean CPU,N/A,N/A,Time
 fannkuch-redux , 221.581787109375000000, 214.535644531250000000,  ,  ,  4251.96 
 fannkuch-redux , 246.433227539062500000, 236.882873535156250000,  ,  ,  4512 
 fannkuch-redux , 233.881958007812500000, 225.753356933593750000,  ,  ,  4333.18 

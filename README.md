@@ -76,6 +76,62 @@ Identifying potential sources of variability is crucial for understanding how di
    - Include results in text, tables, or figures.
    - Analyze and compare with the original study's findings.
 
+    Because we it's too long to test each algorithm we chose to compare only 5 of them which have a different types:
+
+      - binary-trees: The binary-trees algorithm focuses on testing the performance of memory allocation, pointer manipulation, and tree traversal operations. It involves creating and destroying binary trees of various depths, measuring how efficiently the system can handle recursive data structures. This algorithm emphasizes memory management and recursion-heavy computation, making it distinct from numerical or array-heavy tasks.
+      
+      - fannkuch-redux: This algorithm calculates the maximum number of flips needed to sort a permutation of integers. It focuses on intensive computation with array manipulation and permutation generation. Fannkuch-Redux tests CPU performance with arithmetic operations and control flow, unlike binary-trees, which stresses memory allocation.
+      
+      - mandelbrot: Mandelbrot generates a visualization of the Mandelbrot set, a complex mathematical fractal. It requires heavy floating-point arithmetic and iterative computation. This algorithm is computationally intensive but emphasizes floating-point operations, contrasting with the integer-heavy fannkuch-redux and pointer-based binary-trees.
+      
+      - pidigits: This algorithm calculates the digits of π (pi) using arbitrary-precision arithmetic. It measures the system's efficiency in handling large numbers and precision-demanding operations. It focuses on big-integer arithmetic and mathematical precision, unlike the other algorithms, which rely more on standard data types or graphical computations.
+      
+      - spectral-norm: This algorithm computes the spectral norm of a matrix, involving matrix-vector multiplications and iterative convergence. It emphasizes linear algebra and floating-point arithmetic. Unlike the others, this algorithm is highly parallelizable and stresses matrix operations, making it distinct from tree traversal or fractal generation.
+
+   Finally, we decided to compare the algorithms using four key metrics: mean time, mean CPU usage, and the standard deviation for both time and CPU usage. All graphs are available in the given notebook.
+
+   | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
+   |----------|----------|-----------|-----------|------------|
+   | Rust | 29.53 | 0.78 | 935.08 | 33.32 |
+   | C | 39.73 | 1.03 | 841.72 | 10.05 |
+   | Java | 100.19 | 1.96 | 2103.06 | 29.34 |
+   | Javascript | 405.42 | 22.06 | 13348.34 | 503.57 |
+   | Python | 1033.44 | 45.14 | 23754.23 | 255.78 |
+
+   | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
+   |----------|----------|-----------|-----------|------------|
+   | Rust | 162.48 | 2.12 | 5243.52 | 21.99 |
+   | C | 227.45 | 8.76 | 4330.30  | 101.51 |
+   | Java | 363.12 | 18.99 | 6230.90 | 239.97 | 
+   | Javascript | 734.09 | 51.85 | 29182.92 | 517.52 |
+   | Python | 10147.61 | 1134.06 | 209302.3 | 9289.59 |
+
+   | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
+   |----------|----------|-----------|-----------|------------|
+   | Rust | 28.47 | 0.59 | 873.86 | 7.43 |
+   | C | 40.46 | 1.34 | 760.62 | 4.17 |
+   | Java | 106.51 | 1.49 | 1984.90 | 27.71 |
+   | Javascript | 183.54 | 5.32 | 3646.54 | 102.97 |
+   | Python | 5108.70 | 59.43 | 117835 | 667.99 |
+
+   | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
+   |----------|----------|-----------|-----------|------------|
+   | Python | 2.13 | 0.41 | 87.52 | 18.07 |
+   | Rust | 8.63 | 0.86 | 635.90 | 3.76 |
+   | C | 14.06 | 0.69 | 536.68 | 7.22 |
+   | Java | N/A | N/A | N/A | N/A |
+   | Javascript | N/A | N/A | N/A | N/A |
+
+   | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
+   |----------|----------|-----------|-----------|------------|
+   | C | 12.20 | 1.78 | 223.54 | 41.16 |
+   | Java | 29.02 | 0.22 | 752.68 | 4.73 |
+   | Javascript | 62.52 | 3.02 | 2564.52 | 54.50 |
+   | Python | 2872.61 | 87.23 | 65749.01 | 687.41 |
+   | Rust | 14.28 | 0.18 | 386.49 | 7.32 |
+      
+
+
 ### Does It Confirm the Original Study?
 - Summarize the extent to which the replication supports the original study’s conclusions.
 - Highlight similarities and differences, if any.
