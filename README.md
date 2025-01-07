@@ -11,24 +11,18 @@ The "Ranking Programming Languages by Energy Efficiency" study (SCP 2021) aimed 
 1. **Requirements**  
    - Dependencies : Different compilers (C, Rust, Python, Java, Javascript)
    - System requirements : Linux and Intel CPU is mandatory
+   - Ubuntu is recommended
 
 2. **Setting Up the Environment**
-     // TODO : dans le fichier python ajouter une section qui copie tout les csv vers un dossier /app/output
      ```bash
      sudo modprobe msr
-     docker build -t reproducible-project .
-     docker run -v $(pwd)/output:/app/output -it reproducible-project
+     chmod +x ./deps.sh && ./deps.sh
      ```
 
-3. **Reproducing Results**  // TODO
-   - Describe how to run the automated scripts or notebooks to reproduce data and analyze results:
-     ```bash
-     bash scripts/run_analysis.sh
-     ```
-   - Mention Jupyter notebooks (if applicable):  
-     Open `notebooks/reproduce_results.ipynb` to execute the analysis step-by-step.
+3. **Reproducing Results**
+     - Open `reproduce_results.ipynb` to execute the analysis step-by-step.
     
-### Encountered Issues and Improvements // TODO
+### Encountered Issues and Improvements
 During the reproduction process, we encountered several challenges that highlighted the limitations of the original study:
 
 - **Hardcoded Values**: The reliance on fixed parameters in the benchmarks limited flexibility and adaptability. This made it difficult to run the benchmarks in different environments without manual adjustments.
@@ -50,8 +44,6 @@ Reproducing the "Ranking Programming Languages by Energy Efficiency" study is pa
 - **Poor Design Practices**: Inconsistent coding styles, lack of documentation, and inadequate modularization hinder understanding and modification of the code. This makes it harder to ensure consistent results across different environments or workloads.
 - **Platform Dependency**: The metrics are designed for Linux and Intel CPUs, making it difficult to reproduce results on other operating systems or hardware architectures (e.g., ARM, AMD). This platform dependency restricts the study's applicability and generalization.
 - **Toolchain Variability**: Differences in compilers, interpreters, and measurement tools can lead to variations in energy consumption results, requiring careful calibration and consistent tool versions to ensure accurate comparisons.
-
-//TODO graphics
 
 ## Replicability
 
