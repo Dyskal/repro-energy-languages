@@ -87,6 +87,7 @@ Identifying potential sources of variability is crucial for understanding how di
 
    Finally, we decided to compare the algorithms using four key metrics: mean time, mean CPU usage, and the standard deviation for both time and CPU usage. All graphs are available in the given notebook.
 
+   Our results for binary-trees
    
    | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
    |----------|----------|-----------|-----------|------------|
@@ -96,6 +97,8 @@ Identifying potential sources of variability is crucial for understanding how di
    | Javascript | 405.42 | 22.06 | 13348.34 | 503.57 |
    | Python | 1033.44 | 45.14 | 23754.23 | 255.78 |
 
+   Our results for fannkuch-redux
+
    | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
    |----------|----------|-----------|-----------|------------|
    | Rust | 162.48 | 2.12 | 5243.52 | 21.99 |
@@ -103,6 +106,8 @@ Identifying potential sources of variability is crucial for understanding how di
    | Java | 363.12 | 18.99 | 6230.90 | 239.97 | 
    | Javascript | 734.09 | 51.85 | 29182.92 | 517.52 |
    | Python | 10147.61 | 1134.06 | 209302.3 | 9289.59 |
+
+   Our results for mandelbrot
 
    | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
    |----------|----------|-----------|-----------|------------|
@@ -112,6 +117,8 @@ Identifying potential sources of variability is crucial for understanding how di
    | Javascript | 183.54 | 5.32 | 3646.54 | 102.97 |
    | Python | 5108.70 | 59.43 | 117835 | 667.99 |
 
+   Our results for pidigits
+
    | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
    |----------|----------|-----------|-----------|------------|
    | Python | 2.13 | 0.41 | 87.52 | 18.07 |
@@ -119,6 +126,8 @@ Identifying potential sources of variability is crucial for understanding how di
    | C | 14.06 | 0.69 | 536.68 | 7.22 |
    | Java | N/A | N/A | N/A | N/A |
    | Javascript | N/A | N/A | N/A | N/A |
+
+   Our results for spectral-norm
 
    | Language | CPU x̅ | CPU σ | Time x̅ | Time σ |
    |----------|----------|-----------|-----------|------------|
@@ -147,5 +156,26 @@ Identifying potential sources of variability is crucial for understanding how di
    The most notable differences are observed in the standard deviation for time and CPU usage. Our results exhibit significantly higher variability between iterations compared to the original study. These discrepancies can likely be attributed to differences in the testing environment, such as newer compiler versions, updated hardware, or system background activity, which may introduce additional noise into the measurements.
 
 ## Conclusion
-- Recap findings from the reproducibility and replicability sections.
-- Discuss limitations of your reproduction
+
+This analysis aimed to reproduce and validate the findings of the "Ranking Programming Languages by Energy Efficiency" study. While our results aligned broadly with the original conclusions, several challenges and limitations were identified.
+
+### Summary of Findings
+
+- **Reproducibility**:  
+   Reproducing the original study was challenging due to hardcoded values, outdated benchmarks, and platform dependencies. By updating compilers and adhering to the original methodologies, we replicated key findings but noted limitations from inconsistent coding practices and system-specific dependencies.
+
+- **Replicability**:  
+   Our results confirmed the relative performance scales of the tested languages, with C and Rust demonstrating the highest efficiency and Python performing the worst in most benchmarks. However, we observed higher variability in metrics, likely due to differences in hardware and software environments.
+
+### Limitations
+
+1. **Platform Dependency**: Results relied heavily on Linux and Intel CPUs, limiting generalization to other systems.
+2. **Toolchain and Environment**: Variations in compilers and system activity introduced discrepancies, particularly in variability metrics.
+3. **Scope of Algorithms**: Testing was limited to five algorithms, which may not fully represent all workloads from the original study.
+4. **Updated Ecosystem**: Modern versions of languages and compilers occasionally diverged from the original results.
+
+### Future Directions
+
+Expanding the study to include diverse platforms, refining benchmarking practices, and incorporating additional algorithms would enhance generalizability and reproducibility. Modernizing the original benchmarks with updated coding practices is also critical for ongoing relevance.
+
+In summary, while our replication validated key findings, it underscored the need for more adaptable and standardized methodologies to support reproducibility across evolving systems.
