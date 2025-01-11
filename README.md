@@ -13,6 +13,8 @@ The "Ranking Programming Languages by Energy Efficiency" study (SCP 2021) aimed 
    - System requirements : Linux and Intel CPU is mandatory
    - Ubuntu is recommended
 
+Using Docker for this study is not feasible because it restricts direct access to hardware features, such as CPU MSRs, which are essential for accurate energy consumption measurements, and may introduce additional variability in the results due to its containerization and abstraction layers.
+
 2. **Setting Up the Environment**
      ```bash
      sudo modprobe msr
